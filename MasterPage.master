@@ -1,0 +1,85 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<%@ Register src="maintop.ascx" tagname="maintop" tagprefix="uc1" %>
+<%@ Register src="mainbottom.ascx" tagname="mainbottom" tagprefix="uc2" %>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>无标题页</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+    #all
+    {
+    	padding:0;
+    	margin:0 auto;
+    	height:620px;
+    	width:400px;
+    }
+    #all div
+    {
+    	width:400px;
+    }
+    
+    #top
+    {
+        height:60px;	
+    }
+    #buttom
+    {
+    	height:60px;
+    	outline:black solid 2px;
+    }
+    #middle
+    {
+    	float:left;
+    	height:500px;
+    	overflow-x:hidden;
+    	overflow-y:scoll;
+    }
+    #maincontent
+    {
+    	float:left;
+    	height:500px;
+    	width:400px;
+    	border:0;
+    	padding:0;
+    	margin:0;
+    }
+    #t1
+    {
+        border-style: none;
+            border-color: inherit;
+            border-width: 0;
+            margin: 0;
+            padding: 0;
+            width: 400px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    
+    <div id="all">
+        <div id="top">
+            <uc1:maintop ID="maintop1" runat="server" />
+        </div>
+        <div id="middle">
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+            
+            </asp:ContentPlaceHolder>
+        </div>
+        <div id="bottom">
+            <uc2:mainbottom ID="mainbottom1" runat="server" />
+        </div>
+    
+    </div>
+    </form>
+    <p>
+        
+</body>
+</html>
